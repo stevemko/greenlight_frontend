@@ -133,7 +133,7 @@ function Footer() {
         <div className="footer-copy">2025 <span>Greenlight Accessories</span>. All rights reserved.</div>
         <div className="footer-socials">
           {['📘', '📷', '🐦', '▶️'].map((icon, i) => (
-            <a key={i} href="#" className="social-btn">{icon}</a>
+            <button key={i} className="social-btn" type="button" aria-label="Social media link">{icon}</button>
           ))}
         </div>
       </div>
