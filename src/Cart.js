@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const WHATSAPP_NUMBER = '254795352864'; 
+const WHATSAPP_NUMBER = '254794671494'; 
 const API_URL = 'http://127.0.0.1:8000/api/';
 
 function buildWhatsAppMessage(cart, total, orderNumber) {

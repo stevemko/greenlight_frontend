@@ -75,9 +75,8 @@ function Contact() {
       </p>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         {[
-          { icon: '📞', label: 'Call Us', value: '+254 700 000 000' },
-          { icon: '📧', label: 'Email', value: 'info@greenlightaccessories.co.ke' },
-          { icon: '📍', label: 'Location', value: 'Nairobi, Kenya' },
+          { icon: '📞', label: 'Call Us', value: '254794671494' },
+          { icon: '📍', label: 'Location', value: 'Nairobi, Kenya', link: 'https://maps.app.goo.gl/cFTexcWoPY4MkeJ77' },
         ].map((c, i) => (
           <div key={i} style={{
             background: 'var(--dark3)',
@@ -92,7 +91,19 @@ function Contact() {
             <div style={{ fontSize: 28 }}>{c.icon}</div>
             <div>
               <div style={{ fontSize: 11, color: 'var(--gray)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{c.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--white)', marginTop: 4 }}>{c.value}</div>
+              {c.link ? (
+                
+                <a
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: 15, fontWeight: 600, color: 'var(--white)', marginTop: 4, display: 'block', textDecoration: 'underline' }}
+                >
+                  {c.value}
+                </a>
+              ) : (
+                <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--white)', marginTop: 4 }}>{c.value}</div>
+              )}
             </div>
           </div>
         ))}
@@ -130,7 +141,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="footer-copy">2025 <span>Greenlight Accessories</span>. All rights reserved.</div>
+        <div className="footer-copy">2026 <span>Greenlight Accessories</span>. All rights reserved.</div>
         <div className="footer-socials">
           {['📘', '📷', '🐦', '▶️'].map((icon, i) => (
             <button key={i} className="social-btn" type="button" aria-label="Social media link">{icon}</button>

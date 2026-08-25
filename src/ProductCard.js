@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const WHATSAPP_NUMBER = '254795352864';
+export const WHATSAPP_NUMBER = '254794671494';
 
 export function openWhatsApp(message) {
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
