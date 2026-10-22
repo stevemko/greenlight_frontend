@@ -2,42 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+    <!-- Title and description shown on Google -->
+    <title>Greenlight LED Accessories | Motorcycle Accessories in Kenya</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Quality motorcycle LED accessories in Kenya: headlights, spotlights, indicators, side mirrors and more. Same-day delivery in Nairobi. Order online."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://greenlightledaccessories.com/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Site icon (your logo picture) -->
+    <link rel="icon" type="image/jpeg" href="%PUBLIC_URL%/site-icon.jpeg?v=2" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/site-icon.jpeg?v=2" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Link previews (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Greenlight LED Accessories" />
+    <meta property="og:title" content="Greenlight LED Accessories | Motorcycle Accessories in Kenya" />
+    <meta
+      property="og:description"
+      content="Quality motorcycle headlights, indicators, side mirrors, spotlights and much more. Same-day delivery in Nairobi."
+    />
+    <meta property="og:url" content="https://greenlightledaccessories.com/" />
+    <meta property="og:image" content="https://greenlightledaccessories.com/site-icon.jpeg" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Structured data: tells Google this is a shop and what it sells -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Greenlight LED Accessories",
+        "alternateName": "Greenlight Accessories",
+        "url": "https://greenlightledaccessories.com/",
+        "logo": "https://greenlightledaccessories.com/site-icon.jpeg",
+        "image": "https://greenlightledaccessories.com/site-icon.jpeg",
+        "description": "Online shop for quality motorcycle LED accessories in Kenya: headlights, spotlights, indicators, side mirrors and much more.",
+        "telephone": ["+254794671494", "+254713928667"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "areaServed": "KE"
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

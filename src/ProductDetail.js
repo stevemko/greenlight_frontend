@@ -72,7 +72,7 @@ function ProductDetail() {
 
       <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', marginTop: '24px' }}>
         <div style={{ flex: '1 1 360px', maxWidth: '480px' }}>
-          <img src={product.image} alt={product.name}
+          <img src={product.image} alt={product.name} decoding="async" crossOrigin="anonymous" referrerPolicy="no-referrer"
             style={{ width: '100%', borderRadius: '16px', objectFit: 'cover' }} />
         </div>
         <div style={{ flex: '1 1 320px' }}>

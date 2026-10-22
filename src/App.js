@@ -41,6 +41,21 @@ function Cursor() {
   );
 }
 
+function Intro() {
+  return (
+    <section className="section" id="home">
+      <div className="section-tag">Greenlight LED Accessories</div>
+      <h1 className="section-title">
+        Quality Motorcycle <span className="accent">LED Accessories</span> in Kenya
+      </h1>
+      <p className="section-subtitle">
+        Shop headlights, spotlights, indicators, side mirrors and more for your
+        motorcycle. Order online with same-day delivery in Nairobi.
+      </p>
+    </section>
+  );
+}
+
 function Features() {
   const features = [
     { icon: '🛡️', title: 'Genuine Products', desc: 'Every item is sourced directly from verified manufacturers.' },
@@ -65,19 +80,37 @@ function Features() {
   );
 }
 
+const contactLinkStyle = {
+  fontSize: 15,
+  fontWeight: 600,
+  color: 'var(--white)',
+  marginTop: 4,
+  display: 'block',
+  textDecoration: 'underline',
+};
+
 function Contact() {
+  const contacts = [
+    {
+      icon: '📞',
+      label: 'Call Us',
+      phones: [
+        { text: '0794 671 494', href: 'tel:+254794671494' },
+        { text: '0713 928 667', href: 'tel:+254713928667' },
+      ],
+    },
+    { icon: '📍', label: 'Location', value: 'Nairobi, Kenya', link: 'https://maps.app.goo.gl/cFTexcWoPY4MkeJ77' },
+  ];
+
   return (
     <section className="section" id="contact" style={{ background: 'var(--dark2)' }}>
       <div className="section-tag">Get In Touch</div>
       <h2 className="section-title">Contact <span className="accent">Us</span></h2>
       <p className="section-subtitle" style={{ marginBottom: 40 }}>
-        Have a question or need help choosing gear? We are here for you.
+        Have a question or need help choosing the right LED accessories? We are here for you.
       </p>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-        {[
-          { icon: '📞', label: 'Call Us', value: '254794671494' },
-          { icon: '📍', label: 'Location', value: 'Nairobi, Kenya', link: 'https://maps.app.goo.gl/cFTexcWoPY4MkeJ77' },
-        ].map((c, i) => (
+        {contacts.map((c, i) => (
           <div key={i} style={{
             background: 'var(--dark3)',
             border: '1px solid rgba(255,255,255,0.06)',
@@ -91,13 +124,16 @@ function Contact() {
             <div style={{ fontSize: 28 }}>{c.icon}</div>
             <div>
               <div style={{ fontSize: 11, color: 'var(--gray)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{c.label}</div>
-              {c.link ? (
-                
+              {c.phones ? (
+                c.phones.map(p => (
+                  <a key={p.href} href={p.href} style={contactLinkStyle}>{p.text}</a>
+                ))
+              ) : c.link ? (
                 <a
                   href={c.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: 15, fontWeight: 600, color: 'var(--white)', marginTop: 4, display: 'block', textDecoration: 'underline' }}
+                  style={contactLinkStyle}
                 >
                   {c.value}
                 </a>
@@ -113,6 +149,12 @@ function Contact() {
 }
 
 function Footer() {
+  const quickLinks = [
+    { label: 'Home', href: '#home' },
+    { label: 'Products', href: '#products' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -121,27 +163,27 @@ function Footer() {
             <div className="nav-logo-icon">G</div>
             <div className="nav-logo-text">Green<span>light</span></div>
           </div>
-          <p>Your trusted source for premium motorcycle accessories in Kenya. Built by riders, for riders.</p>
+          <p>Your trusted source for quality motorcycle LED accessories in Kenya. Built by riders, for riders.</p>
         </div>
         <div>
           <div className="footer-heading">Quick Links</div>
           <ul className="footer-links">
-            {['Home', 'Products', 'Contact', 'About Us'].map(l => (
-              <li key={l}><a href={'#' + l.toLowerCase().replace(' ', '-')}>{l}</a></li>
+            {quickLinks.map(l => (
+              <li key={l.label}><a href={l.href}>{l.label}</a></li>
             ))}
           </ul>
         </div>
         <div>
           <div className="footer-heading">Categories</div>
           <ul className="footer-links">
-            {['Gloves', 'Helmets', 'Lighting', 'Brakes', 'Tyres'].map(l => (
+            {['Headlights', 'Spotlights', 'Indicators', 'Side Mirrors'].map(l => (
               <li key={l}><a href="#products">{l}</a></li>
             ))}
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="footer-copy">2026 <span>Greenlight Accessories</span>. All rights reserved.</div>
+        <div className="footer-copy">2026 <span>Greenlight LED Accessories</span>. All rights reserved.</div>
         <div className="footer-socials">
           {['📘', '📷', '🐦', '▶️'].map((icon, i) => (
             <button key={i} className="social-btn" type="button" aria-label="Social media link">{icon}</button>
@@ -155,6 +197,7 @@ function Footer() {
 function Home({ searchQuery }) {
   return (
     <>
+      <Intro />
       <Products searchQuery={searchQuery} />
       <Contact />
       <Features />

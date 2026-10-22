@@ -120,7 +120,7 @@ export function ProductCard({ product }) {
   return (
     <div className="product-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       <div style={{ position: 'relative', height: '160px', overflow: 'hidden', background: '#222', borderRadius: '16px 16px 0 0' }}>
-        <img src={product.image} alt={product.name} loading="lazy"
+        <img src={product.image} alt={product.name} loading="lazy" decoding="async" crossOrigin="anonymous" referrerPolicy="no-referrer"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: isOutOfStock ? 0.5 : 1 }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '60px', background: 'linear-gradient(to top, #1A1A1A, transparent)', pointerEvents: 'none' }} />
         {product.is_on_sale && (
