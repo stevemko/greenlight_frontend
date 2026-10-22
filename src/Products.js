@@ -41,7 +41,7 @@ function Products({ searchQuery }) {
   const filterButtons = ['All', ...categories.map(c => c.name)];
 
   return (
-    <section className="section products-section" id="products" style={{ paddingTop: '160px' }}>
+    <section className="section products-section" id="products">
       <div className="products-header">
         <div>
           <div className="section-tag">Our Collection</div>

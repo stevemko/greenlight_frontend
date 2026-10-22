@@ -42,16 +42,38 @@ function Cursor() {
 }
 
 function Intro() {
+  const points = ['Same-day delivery in Nairobi', '7-day easy returns', 'Genuine products'];
+
   return (
-    <section className="section" id="home">
-      <div className="section-tag">Greenlight LED Accessories</div>
-      <h1 className="section-title">
-        Quality Motorcycle <span className="accent">LED Accessories</span> in Kenya
-      </h1>
-      <p className="section-subtitle">
-        Shop headlights, spotlights, indicators, side mirrors and more for your
-        motorcycle. Order online with same-day delivery in Nairobi.
-      </p>
+    <section className="hero" id="home">
+      <div className="hero-glow" />
+      <div className="hero-inner">
+        <div className="hero-text">
+          <div className="section-tag">Greenlight LED Accessories</div>
+          <h1 className="section-title hero-title">
+            Quality Motorcycle <span className="accent">LED Accessories</span> in Kenya
+          </h1>
+          <p className="section-subtitle hero-sub">
+            Shop headlights, spotlights, indicators, side mirrors and more for your
+            motorcycle. Order online with same-day delivery in Nairobi.
+          </p>
+          <div className="hero-actions">
+            <a href="#products" className="hero-btn hero-btn-primary">Shop Now</a>
+            <a href="tel:+254794671494" className="hero-btn hero-btn-ghost">Call Us</a>
+          </div>
+          <ul className="hero-points">
+            {points.map(p => <li key={p}>{p}</li>)}
+          </ul>
+        </div>
+        <div className="hero-visual">
+          <img
+            src={`${process.env.PUBLIC_URL}/site-icon.jpeg`}
+            alt="Greenlight LED Accessories logo"
+            width="400"
+            height="400"
+          />
+        </div>
+      </div>
     </section>
   );
 }
